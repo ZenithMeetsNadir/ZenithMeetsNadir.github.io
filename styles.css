@@ -1,0 +1,43 @@
+:root {
+    --side-padding: 2rem;
+
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --primary-color: #1565a7;
+
+    @media (prefers-color-scheme: dark) {
+        --bg-color: #121212;
+        --text-color: #ffffff;
+        --primary-color: #d4a54f;
+    }
+}
+
+@font-face {
+    font-family: Jacquard12;
+    src: url(assets/fonts/Jacquard_12/Jacquard12-Regular.ttf);
+}
+@font-face {
+    font-family: ShareTechMono;
+    src: url(assets/fonts/Share_Tech_Mono/ShareTechMono-Regular.ttf);
+}
+
+body {
+    font-family: ShareTechMono;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 0 var(--side-padding);
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 2.5em;
+    text-align: center;
+}
+
+#cat {
+    position: absolute;
+    margin: 1em;
+    right: 0;
+    bottom: 0;
+    font-size: 1rem;
+}
