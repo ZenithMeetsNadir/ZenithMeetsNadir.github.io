@@ -7,6 +7,20 @@ document.querySelectorAll('.three-dots').forEach(s => {
     }, 600);
 });
 
+const resourceMap = {
+    'cro': '/assets/gallery/ascii/cro.txt',
+    'cat': '/assets/gallery/ascii/cat.txt',
+};
+
+async function loadAsciiArt(resourceMap) {
+    for (const [id, url] of Object.entries(resourceMap)) {
+        const text = await fetch(url).then(res => res.text());
+        document.getElementById(id).textContent = text;
+    }
+}
+
+await loadAsciiArt(resourceMap);
+
 const defaultFontSize = parseFloat(getComputedStyle(document.getElementById('cro')).fontSize);
 
 function fitAsciiArt() {
